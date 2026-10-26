@@ -1,0 +1,567 @@
+/* =====================================================
+   CAREPLAN - PROFESSIONAL HEALTHCARE UI
+   ===================================================== */
+
+
+/* ================= GLOBAL ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+
+/* ================= NAVIGATION BAR ================= */
+
+.navbar {
+    background: #1e3a8a;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 55px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* LOGO */
+
+.logo {
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    padding: 7px 2px;
+
+    transition: 0.25s ease;
+}
+
+nav a:hover {
+    color: #dbeafe;
+    transform: translateY(-1px);
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    text-align: center;
+
+    padding: 75px 20px 55px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #eff6ff,
+                    #ffffff
+            );
+}
+
+.hero h1 {
+    font-size: 38px;
+
+    color: #1e3a8a;
+
+    margin-bottom: 14px;
+
+    font-weight: 700;
+}
+
+.hero p {
+    color: #64748b;
+
+    font-size: 17px;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+
+/* ================= DASHBOARD CARDS ================= */
+
+.dashboard-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1100px;
+
+    margin: 35px auto 65px;
+
+    padding: 0 20px;
+}
+
+
+/* CARD */
+
+.dashboard-card {
+    background: white;
+
+    padding: 30px 25px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+            0 5px 20px
+            rgba(15, 23, 42, 0.07);
+
+    transition:
+            transform 0.25s ease,
+            box-shadow 0.25s ease;
+}
+
+
+/* CARD HOVER */
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+            0 10px 28px
+            rgba(15, 23, 42, 0.12);
+}
+
+
+/* CARD TITLE */
+
+.dashboard-card h2 {
+    color: #1e3a8a;
+
+    margin-bottom: 12px;
+
+    font-size: 22px;
+}
+
+
+/* CARD DESCRIPTION */
+
+.dashboard-card p {
+    color: #64748b;
+
+    margin-bottom: 22px;
+
+    line-height: 1.7;
+
+    min-height: 55px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+button {
+    background: #1e3a8a;
+
+    color: white;
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+button:hover {
+    background: #162d6b;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+            0 4px 10px
+            rgba(30, 58, 138, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* ================= MANAGEMENT SECTIONS ================= */
+
+.management-section {
+    max-width: 1100px;
+
+    margin: 35px auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 14px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+            0 5px 20px
+            rgba(15, 23, 42, 0.06);
+}
+
+
+/* SECTION TITLE */
+
+.management-section h2 {
+    color: #1e3a8a;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+
+/* SECTION DESCRIPTION */
+
+.management-section > p {
+    color: #64748b;
+
+    margin-bottom: 25px;
+
+    font-size: 15px;
+}
+
+
+/* ================= FORM BOX ================= */
+
+.form-box {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+/* FORM TITLE */
+
+.form-box h3 {
+    color: #334155;
+
+    font-size: 19px;
+
+    margin-bottom: 20px;
+}
+
+
+/* INPUTS */
+
+.form-box input,
+.form-box select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin-bottom: 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 7px;
+
+    background: white;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+
+/* INPUT FOCUS */
+
+.form-box input:focus,
+.form-box select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+            0 0 0 3px
+            rgba(37, 99, 235, 0.10);
+}
+
+
+/* PLACEHOLDER */
+
+.form-box input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* SELECT */
+
+.form-box select {
+    cursor: pointer;
+}
+
+
+/* ================= ACTION BUTTON ================= */
+
+.action-button {
+    margin-top: 5px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= DATA LIST ================= */
+
+.data-list {
+    margin-top: 15px;
+}
+
+
+/* ================= DATA CARDS ================= */
+
+.data-card {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-left:
+            4px solid #2563eb;
+
+    padding: 20px;
+
+    margin-top: 15px;
+
+    border-radius: 9px;
+
+    transition:
+            box-shadow 0.2s ease,
+            transform 0.2s ease;
+}
+
+.data-card:hover {
+    box-shadow:
+            0 5px 15px
+            rgba(15, 23, 42, 0.08);
+
+    transform: translateY(-2px);
+}
+
+
+/* DATA TEXT */
+
+.data-card p {
+    margin: 7px 0;
+
+    color: #475569;
+
+    font-size: 14px;
+}
+
+.data-card strong {
+    color: #1e293b;
+}
+
+
+/* ================= EDIT / DELETE AREA ================= */
+
+.patient-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 16px;
+}
+
+
+/* EDIT BUTTON */
+
+.patient-actions button:first-child {
+    background: #2563eb;
+}
+
+.patient-actions button:first-child:hover {
+    background: #1d4ed8;
+}
+
+
+/* DELETE BUTTON */
+
+.patient-actions button:last-child {
+    background: #dc2626;
+}
+
+.patient-actions button:last-child:hover {
+    background: #b91c1c;
+}
+
+
+/* ================= EMPTY DATA MESSAGE ================= */
+
+.data-list > p {
+    color: #64748b;
+
+    background: #f8fafc;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    border: 1px dashed #cbd5e1;
+
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+
+/* ================= SCROLL SPACING ================= */
+
+#patients,
+#medicines,
+#appointments {
+    scroll-margin-top: 90px;
+}
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 16px 25px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+    }
+
+    .management-section {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 18px 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    nav {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 55px 20px 40px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .dashboard-cards {
+        padding: 0 15px;
+
+        margin-bottom: 45px;
+    }
+
+    .management-section {
+        padding: 22px;
+
+        margin: 25px 15px;
+    }
+
+    .management-section h2 {
+        font-size: 22px;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+
+    .patient-actions {
+        flex-direction: column;
+    }
+
+    .patient-actions button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CarePlan - Healthcare Management System
+    </title>
+
+    <link
+            rel="stylesheet"
+            href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION BAR
+     ===================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        CarePlan
+    </div>
+
+    <nav>
+
+        <a href="#dashboard">
+            Dashboard
+        </a>
+
+        <a href="#patients">
+            Patients
+        </a>
+
+        <a href="#medicines">
+            Medicines
+        </a>
+
+        <a href="#appointments">
+            Appointments
+        </a>
+
+        <a href="#doses">
+            Doses
+        </a>
+
+        <a href="#missedHistory">
+            Missed History
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+     ===================================================== -->
+
+<main>
+
+
+    <!-- =====================================================
+         DASHBOARD
+         ===================================================== -->
+
+    <section
+            id="dashboard"
+            class="hero"
+    >
+
+        <h1>
+            Healthcare Management System
+        </h1>
+
+        <p>
+            Manage patients, medicines and
+            appointments from one simple dashboard.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DASHBOARD CARDS
+         ===================================================== -->
+
+    <section class="dashboard-cards">
+
+
+        <div class="dashboard-card">
+
+            <h2>
+                Patients
+            </h2>
+
+            <p>
+                Manage patient information,
+                contact details and records.
+            </p>
+
+            <button
+                    onclick="scrollToSection('patients')"
+            >
+                Manage Patients
+            </button>
+
+        </div>
+
+
+
+        <div class="dashboard-card">
+
+            <h2>
+                Medicines
+            </h2>
+
+            <p>
+                Manage medicines, dosage,
+                frequency and timing.
+            </p>
+
+            <button
+                    onclick="scrollToSection('medicines')"
+            >
+                Manage Medicines
+            </button>
+
+        </div>
+
+
+
+        <div class="dashboard-card">
+
+            <h2>
+                Appointments
+            </h2>
+
+            <p>
+                Manage doctor appointments,
+                dates and consultation details.
+            </p>
+
+            <button
+                    onclick="scrollToSection('appointments')"
+            >
+                Manage Appointments
+            </button>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PATIENT MANAGEMENT
+         ===================================================== -->
+
+    <section
+            id="patients"
+            class="management-section"
+    >
+
+        <h2>
+            Patient Management
+        </h2>
+
+        <p>
+            Add, view, update and delete
+            registered patients.
+        </p>
+
+
+        <div class="form-box">
+
+            <h3>
+                Add New Patient
+            </h3>
+
+
+            <input
+                    type="text"
+                    id="patientName"
+                    placeholder="Patient Name"
+            >
+
+
+            <input
+                    type="number"
+                    id="patientAge"
+                    placeholder="Age"
+            >
+
+
+            <input
+                    type="text"
+                    id="patientPhone"
+                    placeholder="Phone Number"
+            >
+
+
+            <button
+                    onclick="addPatient()"
+            >
+                Add Patient
+            </button>
+
+        </div>
+
+
+        <button
+                class="action-button"
+                onclick="loadPatients()"
+        >
+            View Patients
+        </button>
+
+
+        <div
+                id="patientList"
+                class="data-list"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MEDICINE MANAGEMENT
+         ===================================================== -->
+
+    <section
+            id="medicines"
+            class="management-section"
+    >
+
+        <h2>
+            Medicine Management
+        </h2>
+
+        <p>
+            Add, view, update and delete
+            prescribed medicines.
+        </p>
+
+
+        <div class="form-box">
+
+            <h3>
+                Add New Medicine
+            </h3>
+
+
+            <input
+                    type="text"
+                    id="medicineName"
+                    placeholder="Medicine Name"
+            >
+
+
+            <input
+                    type="text"
+                    id="medicineDosage"
+                    placeholder="Dosage"
+            >
+
+
+            <input
+                    type="text"
+                    id="medicineFrequency"
+                    placeholder="Frequency"
+            >
+
+
+            <input
+                    type="text"
+                    id="medicineTiming"
+                    placeholder="Timing"
+            >
+
+
+            <select id="medicinePatient">
+
+                <option value="">
+                    Select Patient
+                </option>
+
+            </select>
+
+
+            <button
+                    onclick="addMedicine()"
+            >
+                Add Medicine
+            </button>
+
+        </div>
+
+
+        <button
+                class="action-button"
+                onclick="loadMedicines()"
+        >
+            View Medicines
+        </button>
+
+
+        <div
+                id="medicineList"
+                class="data-list"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         APPOINTMENT MANAGEMENT
+         ===================================================== -->
+
+    <section
+            id="appointments"
+            class="management-section"
+    >
+
+        <h2>
+            Appointment Management
+        </h2>
+
+        <p>
+            Add, view, update and delete
+            doctor appointments.
+        </p>
+
+
+        <div class="form-box">
+
+            <h3>
+                Add New Appointment
+            </h3>
+
+
+            <input
+                    type="text"
+                    id="doctorName"
+                    placeholder="Doctor Name"
+            >
+
+
+            <input
+                    type="date"
+                    id="appointmentDate"
+            >
+
+
+            <input
+                    type="time"
+                    id="appointmentTime"
+            >
+
+
+            <input
+                    type="text"
+                    id="appointmentReason"
+                    placeholder="Reason for Appointment"
+            >
+
+
+            <select id="appointmentPatient">
+
+                <option value="">
+                    Select Patient
+                </option>
+
+            </select>
+
+
+            <button
+                    onclick="addAppointment()"
+            >
+                Add Appointment
+            </button>
+
+        </div>
+
+
+        <button
+                class="action-button"
+                onclick="loadAppointments()"
+        >
+            View Appointments
+        </button>
+
+
+        <div
+                id="appointmentList"
+                class="data-list"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FEATURE 2 + FEATURE 3
+         TODAY'S EXPECTED DOSES
+         ===================================================== -->
+
+    <section
+            id="doses"
+            class="management-section"
+    >
+
+        <h2>
+            Today's Expected Doses
+        </h2>
+
+        <p>
+            Generate and view the medicines
+            that a patient is expected to take today.
+        </p>
+
+
+        <div class="form-box">
+
+            <h3>
+                Generate Today's Doses
+            </h3>
+
+
+            <select id="dosePatient">
+
+                <option value="">
+                    Select Patient
+                </option>
+
+            </select>
+
+
+            <button
+                    onclick="generateTodayDoses()"
+            >
+                Generate Today's Doses
+            </button>
+
+        </div>
+
+
+        <button
+                class="action-button"
+                onclick="loadTodayDoses()"
+        >
+            View Today's Doses
+        </button>
+
+
+        <div
+                id="doseList"
+                class="data-list"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FEATURE 4
+         MISSED DOSE HISTORY
+         ===================================================== -->
+
+    <section
+            id="missedHistory"
+            class="management-section"
+    >
+
+        <h2>
+            Missed Dose History
+        </h2>
+
+        <p>
+            View missed doses for a patient
+            within a selected date range.
+        </p>
+
+
+        <div class="form-box">
+
+            <h3>
+                Search Missed Doses
+            </h3>
+
+
+            <select id="historyPatient">
+
+                <option value="">
+                    Select Patient
+                </option>
+
+            </select>
+
+
+            <label for="fromDate">
+                From Date
+            </label>
+
+
+            <input
+                    type="date"
+                    id="fromDate"
+            >
+
+
+            <label for="toDate">
+                To Date
+            </label>
+
+
+            <input
+                    type="date"
+                    id="toDate"
+            >
+
+
+            <button
+                    onclick="loadMissedDoseHistory()"
+            >
+                View Missed History
+            </button>
+
+        </div>
+
+
+        <div
+                id="missedDoseList"
+                class="data-list"
+        ></div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script
+        src="script.js"
+></script>
+
+
+</body>
+
+</html>
